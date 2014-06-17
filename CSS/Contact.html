@@ -8,33 +8,58 @@
             text-align: center;
         }
 
-        button.b{
-            width: 120px;
-            height: 52px;
-            color: coral;
-        }
-        .r{
-        color: #8f96ff;
-        }
         .l{
             width: 30%;
             float: left;
         }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
+        li {
+            float: left;
+        }
+
+        a:link, a:visited {
+            display: block;
+            width: 150px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #98bf21;
+            text-align: center;
+            padding: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        a:hover, a:active {
+            background-color: #7A991A;
+        }
     </style></head>
 <body style="background-color: #ffcaa9">
 <header>
     <h1>Manusis Technology pvt. ltd.</h1>
 </header>
-
-<section class="s">
-    <button class="b" onclick="window.location.href='/internship/CSS/My%20page.html'">Home </button>
-    <button class="b" onclick="window.location.href='/internship/CSS/contact.html'">Contact Us</button>
-</section>
+<ul>
+    <li><a href="My%20page.html">Home</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+</ul>
 <section style="margin-top: 15px" class="r">
-    <div class="l">Ss</div>
+    <div class="l">
+        <form name="input" action="My%20page.html" method="get">
+            Name<input type="text" name="user">
+            Email:<input type="text" name="mail">
+            Subject:<input type="text" name="sub">
+            Message:<textarea rows="10" cols="25" name="msg"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
     <div class="l">23</div>
     <div class="l">mnn</div>
 </section>
+
 </body>
 </html>
