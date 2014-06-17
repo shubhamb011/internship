@@ -57,13 +57,43 @@
 </ul>
 <section style="margin-top: 15px" class="r">
     <div class="l">
-        <form name="input" action="My%20page.html" method="get">
-            Name:<br><input type="text" name="user"><br>
-            Email:<br><input type="text" name="mail"><br>
-            Subject:<br><input type="text" name="sub"><br>
-            Message:<br><textarea rows="10" cols="20" name="msg"></textarea><br>
-            <input type="submit" value="Submit">
+        <!--<form name="input" action="Contact.html" method="get">-->
+            <!--Name:<br><input type="text" name="user"><br>-->
+            <!--Email:<br><input type="text" name="mail"><br>-->
+            <!--Subject:<br><input type="text" name="sub"><br>-->
+            <!--Message:<br><textarea rows="10" cols="20" name="msg"></textarea><br>-->
+            <!--<input type="submit" value="Submit">-->
+        <!--</form>-->
+        <!--<?php-->
+        <!--$to= "rahulgaba16@gmail.com";-->
+        <!--$subject= $_get-->
+        <!--mail("$to",);        ?>-->
+        <?php
+// display form if user has not clicked submit
+if (!isset($_POST["submit"])) {
+  ?>
+        <form method="post" action="Contact.html">
+        Name:<br> <input type="text" name="from"><br>
+        Email:<br><input type="text" name="eml"><br>
+        Subject: <br><input type="text" name="subject"><br>
+        Message: <br><textarea rows="10" cols="20" name="message"></textarea><br>
+        <input type="submit" name="submit" >
         </form>
+        <?php
+} else {    // the user has submitted the form
+  // Check if the "from" input field is filled out
+  if (isset($_POST["from"])) {
+    $from = $_POST["from"]; // sender
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+    // message lines should not exceed 70 characters (PHP rule), so wrap it
+    $message = wordwrap($message, 70);
+    // send mail
+    mail("rahulgaba16@gmail.com",$subject,$message,"Email_ID: $eml\n","From: $from\n");
+    echo "Thank you for sending us feedback";
+  }
+}
+?>
     </div>
     <div class="l">
         <h1>Corporate Office</h1>
