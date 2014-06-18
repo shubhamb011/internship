@@ -80,15 +80,13 @@ if (!isset($_POST["submit"])) {
         <input type="submit" name="submit" >
         </form>
         <?php
-} else {    // the user has submitted the form
-  // Check if the "from" input field is filled out
+} else {
   if (isset($_POST["from"])) {
-    $from = $_POST["from"]; // sender
+    $from = $_POST["from"];
     $subject = $_POST["subject"];
     $message = $_POST["message"];
-    // message lines should not exceed 70 characters (PHP rule), so wrap it
+
     $message = wordwrap($message, 70);
-    // send mail
     mail("rahulgaba16@gmail.com",$subject,$message,"Email_ID: $eml\n","From: $from\n");
     echo "Thank you for sending us feedback";
   }
