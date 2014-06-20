@@ -1,0 +1,75 @@
+body
+{
+    background-image: url("b.jpg");
+    background-repeat:no-repeat;
+}
+
+.logoClass
+{
+    margin-top: 292px;
+    margin-left: 390px;
+}
+.panel
+{
+    margin-top: 540px;
+    margin-right: 90px;
+    color:whitesmoke;
+    background-color:rgba(0,10,0,0.5);
+    text-shadow: 0px 0px 1px whitesmoke;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    float: right;
+    width: 35.7%;
+    text-align: center;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding:9px;
+}
+.box
+{
+    margin-top: 540px;
+    margin-right: 90px;
+    color:whitesmoke;
+    border: 0px outset rgba(0,0,0,0.3);
+    background-color:rgba(0,10,0,0.5);
+    text-shadow: 0px 0px 1px whitesmoke;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    float: right;
+    width: 15%;
+
+    font-size: 1.2em;
+    text-decoration: none;
+    text-align: center;
+}
+.tracin
+{
+    color:darkolivegreen;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    font-size:8.8em;
+    text-shadow: 2px 1px 8px white;
+    margin-left: 100px;
+    margin-top: -70px;
+}
+.secondary
+{
+    color:whitesmoke;
+    font-family: Trebuchet MS, Arial, sans-serif;
+
+    margin-left: 290px;
+    margin-top: 40px;
+}
+a{
+    text-decoration: none;
+}
+a:visited
+{
+    color:whitesmoke;
+}
+a:link
+{
+    color:whitesmoke;
+}
+a:hover
+{
+
+    color:white;
+}
