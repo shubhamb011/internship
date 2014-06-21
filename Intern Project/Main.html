@@ -3,7 +3,32 @@
 <head>
     <title>Welcome to tracin</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
+<script>
+    function validate()
+    {
 
+        if( document.main.name.value == "" )
+        {
+            alert( "Please provide your name!" );
+            document.main.name.focus() ;
+            return false;
+        }
+        if( document.main.pass.value == "" )
+        {
+            alert( "Please provide your password!" );
+            document.main.pass.focus() ;
+            return false;
+        }
+        if( document.main.occupation[0].checked==false && document.main.occupation[1].checked==false )
+        {
+            alert( "Please select a type of login." );
+            return false;
+        }
+
+        return( true );
+    }
+
+</script>
 </head>
 <body>
 <h3 id="header">Track progress of interns or upload your progress.</h3>
@@ -16,14 +41,14 @@
 
 </section>
 <section class="panel">
-    <form >
+    <form name="main" onsubmit="return(validate())">
         <u>LOGIN PANEL</u><br>
-        <p>User</p><input type="text">
-        <p>Password</p><input type="password"><br>
+        <p>User</p><input type="text" name="name">
+        <p>Password</p><input type="password" name="pass"><br>
 
         <br>Login as:
         <input type="radio" name="occupation" value="intern">Intern <input type="radio" name="occupation" value="admin">Admin<br><br>
-        <label><a href="index.html">Submit</a></label>
+        <input type="submit" name="submit">
     </form>
 </section>
 </body>
