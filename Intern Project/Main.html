@@ -4,6 +4,14 @@
     <title>Welcome to tracin</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
 <script>
+    var db = openDatabase('loi','1.0','My first database',2*1024*1024);
+    db.transaction(function(tx)
+    {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS details( user,password,l_type)');
+        tx.executeSql('INSERT INTO details(user, password) VALUES(?,?,?)',[name, pass, occupation]);
+
+
+    });
     function validate()
     {
 
@@ -19,13 +27,26 @@
             document.main.pass.focus() ;
             return false;
         }
+
         if( document.main.occupation[0].checked==false && document.main.occupation[1].checked==false )
         {
             alert( "Please select a type of login." );
             return false;
         }
+        if(document.main.occupation[0].checked==true)
+        {
+            if(document.main.name.value=="rajiv" && document.main.pass.value=="manusis")
+            {
+                window.location.assign("http://www.w3schools.com")
 
-        return( true );
+            }
+            else
+            {
+                alert("Wrong username or password");
+                return false;
+            }
+        }
+//         return(true);
     }
 
 </script>
@@ -33,7 +54,7 @@
 <body>
 <h3 id="header">Track progress of interns or upload your progress.</h3>
 <section id="logo">
-    <img src="styling/logo.png" height="90px" width="90px" onclick='myFunction()' class="logoClass">
+    <img src="graphics/logo.png" height="90px" width="90px" class="logoClass">
     <h1 class="tracin"><a href="">tracin.</a></h1>
     <p id="desc">A part of Manusis Technologies pvt. ltd.</p>
 </section>
@@ -47,7 +68,7 @@
         <p>Password</p><input type="password" name="pass"><br>
 
         <br>Login as:
-        <input type="radio" name="occupation" value="intern">Intern <input type="radio" name="occupation" value="admin">Admin<br><br>
+        <input type="radio" name="occupation" value="intern">Admin <input type="radio" name="occupation" value="admin">Intern<br><br>
         <input type="submit" name="submit">
     </form>
 </section>
