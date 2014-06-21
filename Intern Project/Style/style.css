@@ -10,18 +10,11 @@ html
     text-shadow: 2px 1px 8px gray;
     text-align: right;
 }
-/*body*/
-/*{*/
-/*background-image: url("back.jpg");*/
-/*background-repeat:no-repeat;*/
-/*width: 100%;*/
-/*}*/
-
 .logoClass
 {
     /*width:50%;*/
-    margin-top: 6%;
-    margin-left: 30%;
+    margin-top: 12%;
+    margin-left: 50%;
     float:left;
 }
 .panel
