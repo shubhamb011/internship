@@ -1,27 +1,36 @@
+
 html
 {
     background: url(b.jpg) no-repeat center center fixed;
     background-size: cover;
+    color: lightgoldenrodyellow;
     font-family: Trebuchet MS, Arial, sans-serif;
 }
 
 #header{
-    color:lightgoldenrodyellow;
+    /*color:lightgoldenrodyellow;*/
     text-shadow: 2px 1px 8px gray;
     text-align: right;
 }
+/*body*/
+/*{*/
+/*background-image: url("back.jpg");*/
+/*background-repeat:no-repeat;*/
+/*width: 100%;*/
+/*}*/
+
 .logoClass
 {
     /*width:50%;*/
-    margin-top: 12%;
-    margin-left: 50%;
+    margin-top: 6%;
+    margin-left: 30%;
     float:left;
 }
 .panel
 {
     margin-top: 15%;
     margin-right: 10%;
-    color:whitesmoke;
+    /*color:whitesmoke;*/
     background-color:rgba(0,10,0,0.5);
     text-shadow: 0px 0px 1px whitesmoke;
     float: right;
@@ -33,16 +42,16 @@ html
 }
 .tracin
 {
-    color:darkolivegreen;
+    /*color:darkolivegreen;*/
 
     font-size:8.8em;
     text-shadow: 2px 1px 8px white;
     margin-left: 5%;
-    margin-top: -2%;
+    margin-top: 10%;
     width: 50%;
 }
 #desc{
-    color:lightgoldenrodyellow;
+    /*color:lightgoldenrodyellow;*/
     /*font-size:8.8em;*/
     text-shadow: 2px 1px 8px white;
     margin-left: 5%;
