@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intern Page</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script>
+        function getrep()
+        {
+            var n = document.getElementById("dept").value;
+            switch (n)
+            {
+                case "Web designing":
+                    document.getElementById("web").style.visibility="visible";
+                    break;
+                default:
+                    document.getElementById("web").style.visibility="hidden";
+                    document.getElementById("button").style.visibility="visible";
+                    break;
+
+            }
+
+        }
+        function stype()
+        {
+            var n = document.getElementById("dept").value;
+            alert("repository "+n+" saved.");
+        }
+    </script>
+    <style>
+        html
+        {
+            color:lightgoldenrodyellow;
+            background: url(Style/b.jpg) no-repeat center center fixed;
+            background-size: cover;
+            font-family: Trebuchet MS, Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+<header >
+    <p style=" width: 90%; float: left">Welcome Intern</p>
+    <input type="button" onclick="lo()" value="Log out" style=" float: left; width: 10%">
+    <br>
+    <p id="title">Profile </p>
+</header>
+
+
+
+<section>
+    <form id="basic">
+        <table>
+            <tr><h3>Basic Info</h3>
+                <img src="https://www.dropbox.com/s/rm2p26s2ahsf920/29017.jpg?dl=1">
+                <td>Name </td><td><input type="text" value="Rahul Gaba" id="name" ></td>
+            </tr><tr><td>Date of birth </td><td><input type="date" value="01/16/1993" id="dob"></td>
+        </tr><tr><td>Skills </td><td><input type="text" value="C++, CSS3, HTML" id="sk"></td>
+        </tr><tr><td>Email </td><td><input type="email" value="rahulgaba16@gmail.com" id="email"></td>
+        </tr><tr><td>Linkedin Profile </td><td><input type="url" value="linkedin.com/rahulgaba16" id="linkedin"></td>
+        </tr><tr><td>Date of joining</td><td><input type="date" value="06/16/2014" id="doj"></td>
+        </tr><tr> <td>Duration in months</td><td><input type="number" value="3" id=""></td>
+
+        </tr>
+            <tr><td></td><td><input type="button" value="submit"></td></tr>
+
+        </table>
+
+    </form>
+
+    <div id="extended">
+        <h3>Extended Info</h3>
+        <section id="graph">
+            <p> Performance Gr</p>
+        </section>
+        <form>
+            <br>
+            <select id="dept" onclick="getrep()">
+                <option>Select Department</option>
+                <option >Web designing </option>
+                <option>Marketing</option>
+                <option>Sales</option>
+                <option>HR department</option>
+            </select><br>
+            <section id="web">
+                <p>Enter Your Repository :</p>
+                <input type="link" id="rep"> <br>
+                <input type="button" value="Submit">
+            </section>
+        </form>
+    </div>
+
+</section>
+
+</body>
+</html>
