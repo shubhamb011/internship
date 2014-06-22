@@ -3,59 +3,80 @@
 <head>
     <title>Welcome to tracin</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
-<script>
-    var db = openDatabase('loi','1.0','My first database',2*1024*1024);
-    db.transaction(function(tx)
-    {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS details( user,password,l_type)');
-        tx.executeSql('INSERT INTO details(user, password) VALUES(?,?,?)',[name, pass, occupation]);
+    <script>
+        var db = openDatabase('loi','1.0','My first database',2*1024*1024);
+        db.transaction(function(tx)
+        {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS details( user,password,l_type)');
+            tx.executeSql('INSERT INTO details(user, password) VALUES(?,?,?)',[name, pass, occupation]);
 
 
-    });
-    function validate()
-    {
+        });
+        function validate()
+        {
 
-        if( document.main.name.value == "" )
-        {
-            alert( "Please provide your name!" );
-            document.main.name.focus() ;
-            return false;
-        }
-        if( document.main.pass.value == "" )
-        {
-            alert( "Please provide your password!" );
-            document.main.pass.focus() ;
-            return false;
-        }
-
-        if( document.main.occupation[0].checked==false && document.main.occupation[1].checked==false )
-        {
-            alert( "Please select a type of login." );
-            return false;
-        }
-        if(document.main.occupation[0].checked==true)
-        {
-            if(document.main.name.value=="rajiv" && document.main.pass.value=="manusis")
+            if( document.main.name.value == "")
             {
-                window.location.assign("http://www.w3schools.com")
+                alert( "Please provide your name!" );
+                document.main.name.focus() ;
+                return false;
+            }
+            if( document.main.pass.value == "" )
+            {
+                alert( "Please provide your password!" );
+                document.main.pass.focus() ;
+                return false;
+            }
 
+            if( document.main.occupation[0].checked==false && document.main.occupation[1].checked==false )
+            {
+                alert( "Please select a type of login." );
+                return false;
+            }
+            if(document.main.occupation[0].checked==true)
+            {
+                if(document.main.name.value=="admin" && document.main.pass.value=="manusis")
+                {
+                    window.close("Main.html");
+                    window.open("index.html");
+
+                }
+                else
+                {
+                    alert("Wrong username or password");
+                    return false;
+                }
+            }
+            else if(document.main.occupation[1].checked==true)
+            {
+                if(document.main.name.value=="intern" && document.main.pass.value=="manusis")
+                {
+//                    window.location.assign("http://www.w3schools.com");
+                    window.close("Main.html");
+                    window.open("intern.html");
+
+                }
+                else
+                {
+                    alert("Wrong username or password");
+                    return false;
+                }
             }
             else
             {
-                alert("Wrong username or password");
-                return false;
-            }
-        }
-//         return(true);
-    }
+                alert("Wrong Username or password !");
 
-</script>
+            }
+//         return(true);
+        }
+
+    </script>
 </head>
 <body>
 <h3 id="header">Track progress of interns or upload your progress.</h3>
 <section id="logo">
-    <img src="graphics/logo.png" height="90px" width="90px" class="logoClass">
-    <h1 class="tracin"><a href="">tracin.</a></h1>
+    <!--<img src="styling/logo.png" height="90px" width="90px" class="logoClass">-->
+    <a href=""> <h1 class="tracin">tracin.</h1></a>
     <p id="desc">A part of Manusis Technologies pvt. ltd.</p>
 </section>
 <section>
