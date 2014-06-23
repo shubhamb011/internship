@@ -15,6 +15,18 @@
 
             });
         }
+        function rbs(){
+            db.transaction(function(tx)
+            {
+                alert("rrrrr");
+                tx.executeSql('SELECT * FROM details', [], function (tx, results) {
+                    var len = results.rows.length, i;
+                    for (i = 0; i < len; i++) {
+                        alert(results.rows.item(i).text);
+                    }
+                });
+            });
+        }
         function validate()
         {
 
@@ -55,6 +67,7 @@
             {
                 if(document.main.name.value=="rahulgaba16" && document.main.pass.value=="1234")
                 {
+
                     window.close("Main.html");
                     window.open("intern.html");
 
@@ -71,7 +84,7 @@
                 else
                 if(document.main.name.value=="geet.exe" && document.main.pass.value=="abcd")
                 {
-
+rbs();
                     window.close("Main.html");
                     window.open("intern.html");
 
