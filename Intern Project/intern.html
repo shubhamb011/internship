@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Intern Page</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="Styling/style.css">
     <script>
         function getrep()
         {
@@ -13,7 +13,7 @@
                     document.getElementById("web").style.visibility="visible";
                     break;
                 default:
-                    document.getElementById("web").style.visibility="hidden";
+//                    document.getElementById("web").style.visibility="hidden";
                     document.getElementById("button").style.visibility="visible";
                     break;
 
@@ -30,7 +30,7 @@
         html
         {
             color:lightgoldenrodyellow;
-            background: url(Style/b.jpg) no-repeat center center fixed;
+            background: url(Styling/back_inner.jpg) no-repeat center center fixed;
             background-size: cover;
             font-family: Trebuchet MS, Arial, sans-serif;
         }
@@ -81,12 +81,13 @@
                 <option>Sales</option>
                 <option>HR department</option>
             </select><br>
-            <section id="web">
-                <p>Enter Your Repository :</p>
-                <input type="link" id="rep"> <br>
-                <input type="button" value="Submit">
-            </section>
+
         </form>
+        <section id="web">
+            <p>Enter Your Repository :</p>
+            <input type="link" id="rep"> <br>
+            <input type="button" value="Submit">
+        </section>
     </div>
 
 </section>
