@@ -2,16 +2,19 @@
 <html>
 <head>
     <title>Welcome to tracin</title>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="styling/home_style.css">
     <script>
-        var db = openDatabase('loi','1.0','My first database',2*1024*1024);
-        db.transaction(function(tx)
-        {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS details( user,password,l_type)');
-            tx.executeSql('INSERT INTO details(user, password) VALUES(?,?,?)',[name, pass, occupation]);
+
+        function dbs(){
+            var db = openDatabase('loi','1.0','My first database',2*1024*1024);
+            db.transaction(function(tx)
+            {
+                tx.executeSql('CREATE TABLE IF NOT EXISTS details( user,password,l_type)');
+                tx.executeSql('INSERT INTO details(user, password) VALUES(?,?,?)',[name, pass, occupation]);
 
 
-        });
+            });
+        }
         function validate()
         {
 
@@ -37,8 +40,9 @@
             {
                 if(document.main.name.value=="admin" && document.main.pass.value=="manusis")
                 {
+                    dbs();
                     window.close("Main.html");
-                    window.open("index.html");
+                    window.open("admin.html");
 
                 }
                 else
@@ -51,7 +55,6 @@
             {
                 if(document.main.name.value=="rahulgaba16" && document.main.pass.value=="1234")
                 {
-
                     window.close("Main.html");
                     window.open("intern.html");
 
@@ -62,6 +65,7 @@
 
                     window.close("Main.html");
                     window.open("intern.html");
+
 
                 }
                 else
@@ -99,10 +103,10 @@
 
 </section>
 <section class="panel">
-    <form name="main" onsubmit="return(validate())">
-        <u>LOGIN PANEL</u><br>
-        <p>User</p><input type="text" name="name">
-        <p>Password</p><input type="password" name="pass"><br>
+    <form name="main" onsubmit="return(validate())" method="post">
+        <u>LOGIN PANEL</u><br><br>
+        User<br><input type="text" name="name">
+        <br>Password<br><input type="password" name="pass"><br>
 
         <br>Login as:
         <input type="radio" name="occupation" value="intern">Admin <input type="radio" name="occupation" value="admin">Intern<br><br>
