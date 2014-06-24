@@ -5,15 +5,15 @@
     <link rel="stylesheet" type="text/css" href="styling/home_style.css">
     <script>
 
-        function dbs(data){
-            var db = openDatabase('loi','1.0','Mydb',2*1024*1024);
-            console.log("data is:::::",data)
-
-            db.transaction(function(tx)
-            {
-                tx.executeSql("CREATE TABLE IF NOT EXISTS details("+" user INTEGER NOT NULL PRIMARY KEY," + "password TEXT NOT NULL);");
-                tx.executeSql('INSERT INTO details(user, password,1_type) VALUES(?,?,?)',[data.name, data.password,"admin"]);
-                alert("rrrrr");
+//        function dbs(data){
+//            var db = openDatabase('loi','1.0','Mydb',2*1024*1024);
+//            console.log("data is:::::",data)
+//
+//            db.transaction(function(tx)
+//            {
+//                tx.executeSql("CREATE TABLE IF NOT EXISTS details("+" user INTEGER NOT NULL PRIMARY KEY," + "password TEXT NOT NULL);");
+//                tx.executeSql('INSERT INTO details(user, password,1_type) VALUES(?,?,?)',[data.name, data.password,"admin"]);
+//                alert("rrrrr");
 
                 /*tx.executeSql('SELECT * FROM details', [], function (tx, results) {
                     var len = results.rows.length, i;
@@ -21,8 +21,8 @@
                         alert(results.rows.item(i).text);
                     }})*/
 
-            });
-        }
+//            });
+//        }
 //        function rbs(){
 //            db.transaction(function(tx)
 //            {
