@@ -5,30 +5,39 @@
     <link rel="stylesheet" type="text/css" href="styling/home_style.css">
     <script>
 
-        function dbs(){
-            var db = openDatabase('loi','1.0','My first database',2*1024*1024);
+        function dbs(data){
+            var db = openDatabase('loi','1.0','Mydb',2*1024*1024);
+            console.log("data is:::::",data)
+
             db.transaction(function(tx)
             {
-                tx.executeSql('CREATE TABLE IF NOT EXISTS details( user,password,l_type)');
-                tx.executeSql('INSERT INTO details(user, password) VALUES(?,?,?)',[name, pass, occupation]);
-
-
-            });
-        }
-        function rbs(){
-            db.transaction(function(tx)
-            {
+                tx.executeSql("CREATE TABLE IF NOT EXISTS details("+" user INTEGER NOT NULL PRIMARY KEY," + "password TEXT NOT NULL);");
+                tx.executeSql('INSERT INTO details(user, password,1_type) VALUES(?,?,?)',[data.name, data.password,"admin"]);
                 alert("rrrrr");
-                tx.executeSql('SELECT * FROM details', [], function (tx, results) {
+
+                /*tx.executeSql('SELECT * FROM details', [], function (tx, results) {
                     var len = results.rows.length, i;
                     for (i = 0; i < len; i++) {
                         alert(results.rows.item(i).text);
-                    }
-                });
+                    }})*/
+
             });
         }
+//        function rbs(){
+//            db.transaction(function(tx)
+//            {
+//                alert("rrrrr");
+//                tx.executeSql('SELECT * FROM details', [], function (tx, results) {
+//                    var len = results.rows.length, i;
+//                    for (i = 0; i < len; i++) {
+//                        alert(results.rows.item(i).text);
+//                    }
+//                });
+//            });
+//        }
         function validate()
         {
+
 
             if( document.main.name.value == "")
             {
@@ -52,8 +61,8 @@
             {
                 if(document.main.name.value=="admin" && document.main.pass.value=="manusis")
                 {
-                    dbs();
-                    window.close("Main.html");
+
+                   window.close("Main.html");
                     window.open("admin.html");
 
                 }
@@ -68,7 +77,7 @@
                 if(document.main.name.value=="rahulgaba16" && document.main.pass.value=="1234")
                 {
 
-                    window.close("Main.html");
+                   window.close("Main.html");
                     window.open("intern.html");
 
                 }
@@ -84,7 +93,6 @@
                 else
                 if(document.main.name.value=="geet.exe" && document.main.pass.value=="abcd")
                 {
-rbs();
                     window.close("Main.html");
                     window.open("intern.html");
 
@@ -100,29 +108,40 @@ rbs();
                 alert("Wrong Username or password !");
 
             }
-//         return(true);
+         return(true);
+            console.log("name value is>>>>",document.main.name.value)
+            var data={
+                name:document.main.name.value,
+                password:document.main.pass.value
+
+            }
+            dbs(data);
+            console.log("Iam after dbs");
         }
 
     </script>
 </head>
 <body>
-<h3 id="header">Track progress of interns or upload your progress.</h3>
+<marquee><h3 id="header" >Track progress of interns or upload your progress.</h3></marquee>
 <section id="logo">
     <!--<img src="styling/logo.png" height="90px" width="90px" class="logoClass">-->
-    <a href=""> <h1 class="tracin">tracin.</h1></a>
+    <a href="" > <h1 class="tracin" >tracin.</h1></a>
     <p id="desc">A part of Manusis Technologies pvt. ltd.</p>
 </section>
 
 <section class="panel">
-    <form name="main" onsubmit="return(validate())" method="post">
+    <form name="main"  method="post">
         <u>LOGIN PANEL</u><br><br>
-        User<br><input type="text" name="name">
-        <br>Password<br><input type="password" name="pass"><br>
+        User<br><input type="text" name="name" placeholder="Enter User Name">
+        <br>Password<br><input type="password" name="pass" placeholder="Enter Your Password"><br>
 
         <br>Login as:
         <input type="radio" name="occupation" value="intern">Admin <input type="radio" name="occupation" value="admin">Intern<br><br>
-        <input type="submit" name="submit">
+        <!--<label onclick="validate()">Push me</label>-->
+        <input type="submit" name="Sign In" class="rc-button rc-button-submit" onclick="validate()">
+
     </form>
-</section>
+   </section>
+<footer><label style="margin-right: 2%">Copyright &reg Rahul, Shubham And Geet</label></footer>
 </body>
 </html>
