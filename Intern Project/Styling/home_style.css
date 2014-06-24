@@ -8,20 +8,11 @@ html
 }
 
 #header{
-    /*color:lightgoldenrodyellow;*/
     text-shadow: 2px 1px 8px gray;
     text-align: right;
 }
-/*body*/
-/*{*/
-/*background-image: url("back.jpg");*/
-/*background-repeat:no-repeat;*/
-/*width: 100%;*/
-/*}*/
-
 .logoClass
 {
-    /*width:50%;*/
     margin-top: 6%;
     margin-left: 30%;
     float:left;
@@ -30,11 +21,10 @@ html
 {
     margin-top: 15%;
     margin-right: 10%;
-    /*color:whitesmoke;*/
     background-color:rgba(0,10,0,0.5);
     text-shadow: 0px 0px 1px whitesmoke;
     float: right;
-    width: 30%;
+    width: 25%;
     text-align: center;
     font-size: 1.2em;
     text-decoration: none;
@@ -42,17 +32,14 @@ html
 }
 .tracin
 {
-    /*color:darkolivegreen;*/
-
     font-size:8.8em;
     text-shadow: 2px 1px 8px white;
     margin-left: 5%;
     margin-top: 10%;
     width: 50%;
 }
+
 #desc{
-    /*color:lightgoldenrodyellow;*/
-    /*font-size:8.8em;*/
     text-shadow: 2px 1px 8px white;
     margin-left: 5%;
     margin-top: -20%;
@@ -79,3 +66,51 @@ a:hover
     width: 50%;
     float: left;
 }
+
+.rc-button,
+.rc-button:visited {
+    display: inline-block;
+    min-width: 46px;
+    text-align: center;
+    color: #444;
+    font-size: 14px;
+    font-weight: 700;
+    height: 36px;
+    padding: 0 8px;
+    line-height: 36px;
+    border-radius: 3px;
+    transition: all 0.218s;
+    border: 1px solid #dcdcdc;
+    background-color: #f5f5f5;
+    cursor: default;
+}
+.card .rc-button {
+    width: 100%;
+    padding: 0;
+}
+
+.rc-button-submit,
+.rc-button-submit:visited {
+    border: 1px solid #5c3000;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+    background-color: #5c2820;
+}
+.rc-button-submit:hover {
+    border: 1px solid #9f5f26;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    background-color: #9f5f26;
+
+}
+
+footer{
+    color: #c0c0c0;
+    width: 100%;
+    height: 30px;
+    bottom: 0;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    background-color:rgba(0,10,0,0.5);
+  }
