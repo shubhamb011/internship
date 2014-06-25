@@ -2,124 +2,39 @@
 <html>
 <head>
     <title>Welcome to tracin</title>
-    <link rel="stylesheet" type="text/css" href="styling/home_style.css">
-    <script>
+    <link rel="stylesheet" type="text/css" href="Styling/home_style.css">
+    <script src="javascript/nm.js"></script>
 
-//        function dbs(data){
-//            var db = openDatabase('loi','1.0','Mydb',2*1024*1024);
-//            console.log("data is:::::",data)
-//
-//            db.transaction(function(tx)
-//            {
-//                tx.executeSql("CREATE TABLE IF NOT EXISTS details("+" user INTEGER NOT NULL PRIMARY KEY," + "password TEXT NOT NULL);");
-//                tx.executeSql('INSERT INTO details(user, password,1_type) VALUES(?,?,?)',[data.name, data.password,"admin"]);
-//                alert("rrrrr");
+<!--//        function dbs(data){-->
+<!--//            var db = openDatabase('loi','1.0','Mydb',2*1024*1024);-->
+<!--//            console.log("data is:::::",data)-->
+<!--//-->
+<!--//            db.transaction(function(tx)-->
+<!--//            {-->
+<!--//                tx.executeSql("CREATE TABLE IF NOT EXISTS details("+" user INTEGER NOT NULL PRIMARY KEY," + "password TEXT NOT NULL);");-->
+<!--//                tx.executeSql('INSERT INTO details(user, password,1_type) VALUES(?,?,?)',[data.name, data.password,"admin"]);-->
 
-                /*tx.executeSql('SELECT * FROM details', [], function (tx, results) {
-                    var len = results.rows.length, i;
-                    for (i = 0; i < len; i++) {
-                        alert(results.rows.item(i).text);
-                    }})*/
+                <!--/*tx.executeSql('SELECT * FROM details', [], function (tx, results) {-->
+                    <!--var len = results.rows.length, i;-->
+                    <!--for (i = 0; i < len; i++) {-->
+                        <!--alert(results.rows.item(i).text);-->
+                    <!--}})*/-->
 
-//            });
-//        }
-//        function rbs(){
-//            db.transaction(function(tx)
-//            {
-//                alert("rrrrr");
-//                tx.executeSql('SELECT * FROM details', [], function (tx, results) {
-//                    var len = results.rows.length, i;
-//                    for (i = 0; i < len; i++) {
-//                        alert(results.rows.item(i).text);
-//                    }
-//                });
-//            });
-//        }
-        function validate()
-        {
-
-
-            if( document.main.name.value == "")
-            {
-                alert( "Please provide your name!" );
-                document.main.name.focus() ;
-                return false;
-            }
-            if( document.main.pass.value == "" )
-            {
-                alert( "Please provide your password!" );
-                document.main.pass.focus() ;
-                return false;
-            }
-
-            if( document.main.occupation[0].checked==false && document.main.occupation[1].checked==false )
-            {
-                alert( "Please select a type of login." );
-                return false;
-            }
-            if(document.main.occupation[0].checked==true)
-            {
-                if(document.main.name.value=="admin" && document.main.pass.value=="manusis")
-                {
-
-                   window.close("Main.html");
-                    window.open("admin.html");
-
-                }
-                else
-                {
-                    alert("Wrong username or password");
-                    return false;
-                }
-            }
-            else if(document.main.occupation[1].checked==true)
-            {
-                if(document.main.name.value=="rahulgaba16" && document.main.pass.value=="1234")
-                {
-
-                   window.close("Main.html");
-                    window.open("intern.html");
-
-                }
-                else
-                if(document.main.name.value=="shubhamb011" && document.main.pass.value=="xyz")
-                {
-
-                    window.close("Main.html");
-                    window.open("intern.html");
-
-
-                }
-                else
-                if(document.main.name.value=="geet.exe" && document.main.pass.value=="abcd")
-                {
-                    window.close("Main.html");
-                    window.open("intern.html");
-
-                }
-                else
-                {
-                    alert("Wrong username or password");
-                    return false;
-                }
-            }
-            else
-            {
-                alert("Wrong Username or password !");
-
-            }
-         return(true);
-            console.log("name value is>>>>",document.main.name.value)
-            var data={
-                name:document.main.name.value,
-                password:document.main.pass.value
-
-            }
-            dbs(data);
-            console.log("Iam after dbs");
-        }
-
-    </script>
+<!--//            });-->
+<!--//        }-->
+<!--//        function rbs(){-->
+<!--//            db.transaction(function(tx)-->
+<!--//            {-->
+<!--//                tx.executeSql('SELECT * FROM details', [], function (tx, results) {-->
+<!--//                    var len = results.rows.length, i;-->
+<!--//                    for (i = 0; i < len; i++) {-->
+<!--//                        alert(results.rows.item(i).text);-->
+<!--//                    }-->
+<!--//                });-->
+<!--//            });-->
+<!--//        }-->
+        <!---->
+    <!--</script>-->
 </head>
 <body>
 <marquee><h3 id="header" >Track progress of interns or upload your progress.</h3></marquee>
@@ -130,15 +45,14 @@
 </section>
 
 <section class="panel">
-    <form name="main"  method="post">
+    <form name="main"  method="post" >
         <u>LOGIN PANEL</u><br><br>
         User<br><input type="text" name="name" placeholder="Enter User Name">
         <br>Password<br><input type="password" name="pass" placeholder="Enter Your Password"><br>
-
         <br>Login as:
         <input type="radio" name="occupation" value="intern">Admin <input type="radio" name="occupation" value="admin">Intern<br><br>
         <!--<label onclick="validate()">Push me</label>-->
-        <input type="submit" name="Sign In" class="rc-button rc-button-submit" onclick="validate()">
+        <input type="submit" name="Sign In" class="rc-button rc-button-submit" onclick="validate()" >
 
     </form>
    </section>
