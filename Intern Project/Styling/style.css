@@ -46,3 +46,40 @@ img{
 #web{
     visibility: hidden;
 }
+
+.rc-button,
+.rc-button:visited {
+    display: inline-block;
+    min-width: 46px;
+    text-align: center;
+    color: #444;
+    font-size: 14px;
+    font-weight: 700;
+    height: 36px;
+    padding: 0 8px;
+    line-height: 36px;
+    border-radius: 3px;
+    transition: all 0.218s;
+    border: 1px solid #dcdcdc;
+    background-color: #f5f5f5;
+    cursor: default;
+}
+.card .rc-button {
+    width: 100%;
+    padding: 0;
+}
+
+.rc-button-submit,
+.rc-button-submit:visited {
+    border: 1px solid #5c3000;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+    background-color: #5c2820;
+}
+.rc-button-submit:hover {
+    border: 1px solid #9f5f26;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    background-color: #9f5f26;
+
+}
